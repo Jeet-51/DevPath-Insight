@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    font-family: 'Inter', sans-serif; 
+    background-color: #F3F4F6;
+    font-size: 16px;
+    color: #333;
+    background-image: linear-gradient(rgba(247, 247, 247, 0.3), rgba(247, 247, 247, 0.5)), url('https://t3.ftcdn.net/jpg/05/15/16/12/360_F_515161254_2cp9OEcNqERA2KHp2jqaFfvF7Ze5oO4I.jpg');
+
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 25px;
+    background: #0f292f;
+    color: white;
+    text-align: center;
+}
+
+.navbar h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    flex: 1; /* This will make sure the title takes up the full width of the navbar */
+}
+
+.navbar-link {
+    text-decoration: none; /* Removes the underline from the link */
+    color: inherit; /* Inherits the color from the navbar class, which is white */
+    display: block; /* Makes the link take the full available space */
+}
+
+.navbar-link:hover,
+.navbar-link:focus {
+    text-decoration: none; /* Keeps the link without underline on hover/focus */
+}
+
+/* Pop up container*/
+/* Add styles for the popup container */
+.popup-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black background */
+    z-index: 1000;
+}
+
+/* Style for the popup box */
+.popup {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 500px;
+    border: 1px solid #ccc; /* Adds a light border around the popup */
+}
+
+.popup-container {
+    display: none; /* Start hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.close-button {
+    float: right;
+    padding: 5px 10px;
+    margin: -20px -20px 20px;
+    border-radius: 5px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold; /* Makes the text on the button bolder */
+}
+
+.popup-message {
+    margin: 15px 0;
+    line-height: 1.8;  /* Adjust line height for better readability */
+    font-size: 16px;
+    padding: 10px;     /* Add padding around the text */
+    text-align: justify; /* Justify text for a cleaner presentation */
+    white-space: pre-line; /* Ensures that line breaks in the text are respected */
+}
+
+.popup-section {
+    margin-bottom: 15px; /* Adds space below each section */
+    padding: 5px 0; /* Optional padding for top and bottom */
+}
+
+
+/* Form and Field Styling */
+/* Form Sections */
+
+.form-container {
+    display: flex;
+    justify-content: center; /* This will space out the children evenly */
+    gap: 20px; /* This adds space between the form sections */
+}
+
+/* Style adjustments for individual form sections to enable flex sizing */
+.education-section,
+.skills-section {
+    width: 45%; /* Reduced width for a narrower appearance */
+    background-color: #eef2f7; /* A soft, light blue background */
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners for a softer look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin: 20px 0; /* Space above and below the sections */
+}
+.education-section,
+.skills-section {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+h2 {
+    color: #2c3e50;
+    margin-bottom: 16px;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #333;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="year"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+input[type="submit"] {
+    background-color: #0f292f;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    font-size: 1rem;
+    display: block; /* Change this to inline-block if you want the button to be smaller */
+    width: 100%; /* Remove this if using inline-block for button */
+    margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+    background-color: #25464e;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+
+    body {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .form-container {
+        flex-direction: column;
+        align-items: center; /* Align sections to the center on smaller screens */
+    }
+
+    .education-section,
+    .skills-section {
+        width: 80%; /* Full width on smaller screens for better readability */
+        margin-bottom: 20px;
+    }
+}

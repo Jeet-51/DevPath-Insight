@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    
+    font-family: 'Inter', sans-serif; 
+    background-color: #F3F4F6;
+    font-size: 16px;
+    color: #333;
+    background-image: linear-gradient(rgba(247, 247, 247, 0.3), rgba(247, 247, 247, 0.5)), url('https://t3.ftcdn.net/jpg/05/15/16/12/360_F_515161254_2cp9OEcNqERA2KHp2jqaFfvF7Ze5oO4I.jpg');
+    
+    
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 25px;
+    background: #0f292f;
+    color: white;
+    text-align: center;
+}
+
+.navbar h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    flex: 1; /* This will make sure the title takes up the full width of the navbar */
+}
+
+.navbar-link {
+    text-decoration: none; /* Removes the underline from the link */
+    color: inherit; /* Inherits the color from the navbar class, which is white */
+    display: block; /* Makes the link take the full available space */
+}
+
+.navbar-link:hover,
+.navbar-link:focus {
+    text-decoration: none; /* Keeps the link without underline on hover/focus */
+}
+
+.filter-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFFFFF;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    margin: 30px auto;
+    max-width: 960px;
+}
+
+.filter-field {
+    display: flex;
+    align-items: center;
+    margin: 0 10px 20px 10px;
+    width: auto;
+}
+
+.filter-field label {
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+.filter-field input,
+.filter-field select {
+    padding: 12px;
+    border-radius: 30px;
+    border: 2px solid #D1D5DB;
+    font-size: 1rem;
+    flex-grow: 1;
+    transition: border-color 0.3s ease;
+}
+
+.filter-field input:focus,
+.filter-field select:focus {
+    border-color: #A4CAFE;
+}
+
+.filter-action {
+    text-align: center;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.filter-action button, .table-action button {
+    background-color: #0f292f; /* a consistent color for all buttons */
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 20px; /* rounded corners for buttons */
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 5px; /* space between buttons */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* subtle shadow for depth */
+    transition: all 0.3s ease;
+}
+
+.filter-action button:hover, .table-action button:hover {
+    background-color: #4253F9; /* a slightly darker shade for hover state */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* more pronounced shadow on hover */
+    transform: translateY(-2px); /* lift effect */
+}
+
+#filter-button {
+    background-color: #0f292f; /* a consistent color for all buttons */
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 12px 30px;
+    border-radius: 25px; /* more pronounced rounded corners for buttons */
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* subtle shadow for depth */
+    transition: all 0.3s;
+    display: inline-block; /* for the transform property to work */
+}
+
+#filter-button:hover {
+    background-color: #2980b9; /* a slightly darker shade for hover state */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* more pronounced shadow on hover */
+    transform: translateY(-3px); /* lift effect */
+}
+.edit-button, .delete-button {
+    background-color: #0f292f; /* example color for edit button */
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 25px; /* consistent with the filter button */
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    margin: 0 5px; /* spacing between buttons if they are next to each other */
+    display: inline-block; /* for the transform property to work */
+}
+
+.edit-button:hover {
+    background-color: #427e8a; /* a slightly darker shade for hover state */
+}
+
+.delete-button {
+    background-color: #f44336; /* example color for delete button */
+}
+
+.delete-button:hover {
+    background-color: #d32f2f; /* a slightly darker shade for hover state */
+}
+
+.table-action button {
+    padding: 8px 16px; /* slightly smaller padding for table buttons */
+    font-size: 0.875rem; /* smaller font size for table buttons */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #E5E7EB;
+}
+
+th {
+    background-color: #EFF6FF;
+    color: #1F2937;
+    padding: 15px;
+    text-align: left;
+    border-bottom: 2px solid #60A5FA;
+}
+
+td {
+    background-color: #fff;
+    padding: 15px;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: #F9FAFB;
+}
+
+@media (max-width: 768px) {
+    .navbar h1 {
+        font-size: 1.5rem; /* smaller font size for mobile */
+    }
+
+    .filter-form {
+        flex-direction: column;
+    }
+
+    .filter-field {
+        width: 100%; /* Full width on smaller screens */
+        margin: 10px 0;
+    }
+
+    .filter-action {
+        order: 99; /* Ensure that the action button is at the bottom */
+    }
+}

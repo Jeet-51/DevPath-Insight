@@ -1,0 +1,281 @@
+body {
+    font-family: 'Inter', sans-serif; 
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #283c44;
+    background-image: linear-gradient(rgba(247, 247, 247, 0.3), rgba(247, 247, 247, 0.5)), url('https://t3.ftcdn.net/jpg/05/15/16/12/360_F_515161254_2cp9OEcNqERA2KHp2jqaFfvF7Ze5oO4I.jpg');
+     background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Optional: keeps the background image fixed on scroll */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+
+.main-content {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content-flex {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to next line on smaller screens */
+    gap: 20px;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.overview-section {
+    flex: 1 1 calc(50% - 10px); /* flex-grow, flex-shrink, flex-basis */
+    padding: 20px;
+    background: linear-gradient(to right, #cccccc, #a4a4a4); 
+    color: black;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-right: 20px;
+}
+
+
+.side-sections {
+    flex-basis: 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 8px;
+}
+
+/* First section */
+.section:nth-of-type(1) {
+    background-color: #cb2d6f; /* Red */
+  }
+  
+  /* Second section */
+  .section:nth-of-type(2) {
+    background-color: #14a098; /* Steel Blue */
+  }
+  
+  /* Third section */
+  .section:nth-of-type(3) {
+    background-color: #2dcb89; /* Lime Green */
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 60px; /* Adjust this value to position the dropdown content */
+    right: 0; /* Align the dropdown content with the right edge of the user logo */
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.section {
+    background: #14a098;
+    color: white;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.section h3 {
+    margin-bottom: 10px;
+}
+
+.section p {
+    margin-bottom: 15px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+/* Keyframes for the fade-in-up animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  font-family: 'Inter', sans-serif;
+  font-size: 2rem; /* Adjust the size as needed */
+  font-weight: 700;
+  color: transparent; /* Makes the text color transparent */
+  background-clip: text; /* Clips the background right at the text */
+  -webkit-background-clip: text; /* For Safari */
+  color: black;/* Your desired gradient */
+  animation: fadeInUp 1s ease-out forwards; /* Apply the animation */
+  margin: 20px 0;
+}
+
+/* Container for the heading to apply additional styling */
+.heading-container {
+  text-align: center;
+  
+/* * Spacing after the header */
+   /* Subtle shadow for depth */
+  animation: fadeInUp 1s ease-out forwards; /* Apply the animation with a delay */
+}
+
+
+.button {
+    display: inline-block;
+    background-color: black;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Rest of your styles */
+
+
+/* Import the Inter font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+/* Reset padding and margin for all elements */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevents horizontal scroll */
+}
+
+
+.overview-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.overview-item {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+
+/* Navbar styles */
+.navbar {
+    width: 100%;
+    background-color: #0f292f; /* Dark background color */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem; /* 16px top/bottom and 32px left/right */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.navbar-logo a {
+    color: #14a098; /* Bright color for the logo */
+    font-size: 1.5rem; /* 24px size for logo */
+    font-weight: 700; /* Bold font weight for logo */
+    text-decoration: none; /* Remove underline from logo text */
+}
+
+.navbar-links {
+    display: flex;
+    gap: 1rem; /* Spacing between links */
+}
+
+.navbar-links a {
+    color: #d1d1d1; /* Light grey color for links */
+    font-weight: 500; /* Medium weight for link text */
+    text-decoration: none; /* Remove underline from links */
+    padding: 0.5rem 1rem; /* 8px top/bottom and 16px left/right padding */
+    border-radius: 4px; /* Rounded corners for link background on hover */
+    transition: background-color 0.2s, color 0.2s; /* Smooth transition for hover effects */
+}
+
+.navbar-links a:hover {
+    background-color: #61dafb; /* Background color on hover */
+    color: #ffffff; /* Text color on hover */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem; /* Reduced padding on smaller screens */
+    }
+
+    .navbar-links {
+        width: 100%; /* Full width for link container */
+        justify-content: center; /* Center links horizontally */
+        margin-top: 1rem; /* Space between logo and links */
+    }
+
+    .navbar-links a {
+        margin-bottom: 0.5rem; /* Space between stacked links */
+    }
+}
+
+
+
+.section {
+    /* ... existing styles ... */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and shadow */
+}
+
+.section:hover {
+    transform: scale(1.05); /* Slightly increase the size of the container */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Increase the shadow to give a "lifted" effect */
+}
+
+
+/* Apply general styling to all paragraphs for consistency */
+p {
+    font-family: 'Inter', sans-serif; /* Use the Inter font */
+    line-height: 1.6; /* Makes text more readable */
+    margin-bottom: 1em; /* Adds space after each paragraph */
+    text-align: justify; /* Justifies the text for a clean look */
+    max-width: 800px; /* Sets a max-width for optimal reading length */
+    margin-left: auto; /* Centers the text block horizontally */
+    margin-right: auto;
+    color: black;
+    font-style: bold;
+}
+
+/* You can add a class to the main content container */
+.main-content {
+    padding: 10px;
+}
+
+/* Style specifically for the overview section if needed */
+

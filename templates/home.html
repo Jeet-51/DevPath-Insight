@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to DevPath Insight</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='homestyle.css') }}">
+</head>
+<body>
+    <div class="centered-container">
+        <div class="login-box">
+            <h1>Welcome to DevPath Insight</h1>
+            <h2>Embrace the opportunity to refine your career path with the Developer Career Insight Tool, where data drives decisions, and insights inspire advancement.</h2>
+            <form method="POST" action="/">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                <div class="input-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <p>Not a member? <a href="/register">Register here</a></p>
+        </div>
+    </div>
+</body>
+</html>

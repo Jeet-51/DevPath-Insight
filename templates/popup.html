@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Popup Message</title>
+    <style>
+        /* Add your CSS styles for the popup here */
+        .popup-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 9999;
+            display: none;
+        }
+        .popup-message {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .close-button {
+            background-color: #f44336;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="popup-container" id="popupContainer">
+        <p class="popup-message" id="popupMessage"></p>
+        <button class="close-button" id="closePopup">Close</button>
+    </div>
+    <iframe src="popup.html" id="popupFrame" style="display: none;"></iframe>
+    <script>
+        // JavaScript code for closing the popup
+        document.getElementById('closePopup').addEventListener('click', function() {
+            document.getElementById('popupContainer').style.display = 'none';
+        });
+    </script>
+</body>
+</html>

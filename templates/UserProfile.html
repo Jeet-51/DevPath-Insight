@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Your Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='userprofile.css') }}">
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="\dashboard" class="navbar-link">
+            <h1>Add Your Information</h1>
+        </a>
+        </div>
+        <div>
+        <form id="userProfileForm" action="/User-Profile" method="POST">
+            <input type="hidden" name="csrf_token" value="{{csrf_token }}">
+
+            <div class="form-container">
+            <div class="education-section">
+                <h2>Education Section</h2>
+                
+                <label for="educationLevel">Education Level:</label>
+                <input type="text" id="educationLevel" name="educationLevel" required>
+                
+                <label for="yearsExperience">Years of Work Experience(Professional):</label>
+                <input type="number" id="yearsExperience" name="workExperienceYears" required>
+
+                <label for="currentRole">Current Role:</label>
+                <input type="text" id="currentRole" name="currentRole">
+
+                <label for="desiredRole">Desired Role:</label>
+                <input type="text" id="desiredRole" name="desiredRole">
+
+                <label for="industry">Industry:</label>
+                <input type="text" id="industry" name="industry">
+
+                <label for="locationPreference">Preferred Location Mode:</label>
+                <select id="locationPreference" name="preferredLocation">
+                    <option value="Remote">Remote</option>
+                    <option value="Hybrid">Hybrid</option>
+                    <option value="Offsite">Offsite</option>
+                </select>
+            </div>
+        
+
+            <div class="skills-section">
+                <h2>Skills Section</h2>
+                <label for="skill">Skill:</label>
+                <input type="text" id="skill" name="skillName">
+                
+                <label for="proficiencyLevel">Proficiency Level:</label>
+                <select id="proficiencyLevel" name="proficiencyLevel">
+                    <option value="Beginner">Beginner</option>
+                    <option value="Intermediate">Intermediate</option>
+                    <option value="Advanced">Advanced</option>
+                    <option value="Expert">Expert</option>
+                </select>
+
+                <label for="yearsOfExperience">Years of Experience using this skills:</label>
+                <input type="number" id="yearsOfExperience" name="yearsOfExperience">
+
+                <label for="lastUsed">Last Used:</label>
+                <input type="year" id="lastUsed" name="lastUsed">
+                
+                <label for="interestLevel">Interest Level:</label>
+                <select id="interestLevel" name="interestLevel">
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+            </div>
+        </div>
+
+
+            <input type="submit" value="Submit Information">
+        </form>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var form = document.getElementById('userProfileForm');
+            form.onsubmit = function(event) {
+                event.preventDefault();
+                var data = new FormData(form);
+    
+                fetch(form.action, {
+                    method: 'POST',
+                    body: data,
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Desired Role
+                    var desiredRoleDiv = document.getElementById('desiredRole');
+                    var desiredRole = form.elements['desiredRole'].value; // Get the desired role from the form
+                    desiredRoleDiv.innerText = 'Desired Role: ' + desiredRole;
+                    
+                    // Success Message
+                    var successMessageDiv = document.getElementById('successMessage');
+                    successMessageDiv.innerText = 'Your information has been submitted successfully!';
+    
+                    // Skill Gaps
+                    var skillGapsDiv = document.getElementById('skillGaps');
+                    if (data.skill_gaps && data.skill_gaps.length > 0) {
+                        skillGapsDiv.innerText = 'Skill gaps identified based on your current skills added: ' + data.skill_gaps.join(', ');
+                    } else {
+                        skillGapsDiv.innerText = 'No skill gaps identified.';
+                    }
+                    
+                    // Display the popup
+                    var popupContainer = document.getElementById('popupContainer');
+                    popupContainer.style.display = 'flex'; // Use flex to center the popup on the screen
+    
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred while submitting your information.');
+                });
+            };
+    
+            // Close Popup
+            var closeButton = document.getElementById('closePopup');
+            closeButton.addEventListener('click', function() {
+                var popupContainer = document.getElementById('popupContainer');
+                popupContainer.style.display = 'none';
+            });
+        });
+    </script>
+    
+<div id="popupContainer" class="popup-container">
+    <div class="popup">
+        <button id="closePopup" class="close-button">Close</button>
+        <div id="desiredRole" class="popup-section"></div>
+        <b><div id="successMessage" class="popup-section"></div></b>
+        <div id="skillGaps" class="popup-section"></div>
+    </div>
+</div>
+
+
+
+        
+</body>
+</html>

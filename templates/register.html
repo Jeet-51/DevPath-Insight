@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='registerstyle.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Register</h2>
+        {% if error %}
+            <div class="error">{{ error }}</div>
+        {% endif %}
+        <form method="POST">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <select name="role">
+                <option value="Undergraduate Student">Undergraduate Student</option>
+                <option value="Graduate Student(Masters)">Graduate Student(Masters)</option>
+                <option value="Graduate Student(PhD)">Graduate Student(PhD)</option>
+                <option value="Entry Level">Entry Level</option>
+                <option value="Experienced (2-5 years)">Experienced (2-5 years)</option>
+                <option value="Senior-Level (5+ years)">Senior-Level (5+ years)</option>
+
+            </select>
+            <button type="submit">Register</button>
+            <a href="/">Already registered? Login here</a>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+/* styles.css */
+
+/* General Styles */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Inter', sans-serif; 
+    background-image: linear-gradient(rgba(247, 247, 247, 0.3), rgba(247, 247, 247, 0.5)), url('https://t3.ftcdn.net/jpg/05/15/16/12/360_F_515161254_2cp9OEcNqERA2KHp2jqaFfvF7Ze5oO4I.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Optional: keeps the background image fixed on scroll */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.container {
+    max-width: 400px;
+    padding: 40px; /* Increased padding */
+    margin: auto;
+    background: white; /* Darker background for the form container */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+h1, h2 {
+    color: black; /* Bright color for the headers */
+}
+
+/* Input and Button Styles */
+input[type='text'],
+input[type='email'],
+input[type='password'],
+select {
+    width: calc(100% - 20px);
+    padding: 12px; /* Increased padding */
+    margin-bottom: 15px;
+    border: 1px solid #ddd; /* Lighter border color */
+    border-radius: 4px;
+    background: #fff; /* White background for input */
+    color: #333; /* Dark text color for input */
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    padding: 12px; /* Increased padding */
+    border-radius: 4px;
+    border: none;
+    background-color: #0a95ff; /* Same blue color for button */
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #007acc;
+}
+
+/* Anchor Styles */
+a {
+    color: #61dafb; /* Bright color for the links */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Error Message Styles */
+.error {
+    color: #e74c3c; /* Updated error color for better visibility */
+    margin-bottom: 15px;
+}
+
+.container a {
+    color: #61dafb;
+    text-decoration: none;
+    display: inline-block; /* Allows margin to be applied */
+    margin-top: 20px; /* Adjust the value as needed for spacing */
+    padding: 8px 0; /* Adds padding above and below the text */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        margin-top: 10%;
+    }
+}

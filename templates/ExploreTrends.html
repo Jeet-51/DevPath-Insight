@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Industry Insight</title>
+<style>
+  .chart-section {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  body{
+    font-family: 'Inter', sans-serif; 
+    background-image: linear-gradient(rgba(247, 247, 247, 0.3), rgba(247, 247, 247, 0.5)), url('https://t3.ftcdn.net/jpg/05/15/16/12/360_F_515161254_2cp9OEcNqERA2KHp2jqaFfvF7Ze5oO4I.jpg');
+
+  };
+  .chart-title {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin-bottom: 30px;
+  }
+
+  .bar-chart {
+    
+    margin-bottom: 50px;
+  }
+
+  .bar-container {
+    display: flex;
+    align-items: center;
+    background: #f4f4f4;
+    margin: 8px 0;
+    padding: 2px;
+    border-radius: 3px;
+  }
+
+  .bar-label {
+    width: 20%;
+    padding: 5px 10px;
+    text-align: left;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+  }
+
+
+
+  .chart-section:nth-child(odd) .bar {
+    background-color: #1a508b; /* A darker blue for contrast on odd sections */
+}
+.chart-section:nth-child(even) .bar {
+    background-color: #0288d1; /* A vibrant blue for even sections */
+}
+.chart-section:nth-child(3) .bar {
+    background-color: #ff6347; /* Terra cotta for the third chart */
+}
+.chart-section:nth-child(4) .bar {
+    background-color: #4682b4; /* Steel blue for the fourth chart */
+}
+
+p {
+  color: #333333; /* Set text color */
+  font-family: Arial, sans-serif; /* Set font family */
+  font-size: 16px; /* Set font size */
+  line-height: 1.5; /* Set line height */
+  text-align: justify; /* Set text alignment */
+  margin: 0 0 20px; /* Set margin */
+  padding: 0; /* Remove default padding */
+}
+
+  .bar {
+    /* Takes the remaining space */
+    height: 24px;
+    background-color: #e44d26;
+    width: 0%; /* Set initially to 0%, will be overwritten inline */
+    border-radius: 3px 0 0 3px; /* Rounded corners on the left side */
+    transition: width 0.5s ease-in-out;
+  }
+
+  .bar span {
+    padding-right: 10px;
+    
+    text-align: right;
+    color: white;
+    margin-left: auto;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 25px;
+    background: #0f292f;
+    color: white;
+    text-align: center;
+}
+
+.navbar h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    flex: 1; /* This will make sure the title takes up the full width of the navbar */
+}
+
+.navbar-link {
+    text-decoration: none; /* Removes the underline from the link */
+    color: inherit; /* Inherits the color from the navbar class, which is white */
+    display: block; /* Makes the link take the full available space */
+}
+
+.navbar-link:hover,
+.navbar-link:focus {
+    text-decoration: none; /* Keeps the link without underline on hover/focus */
+}
+
+  
+  @media (max-width: 768px) {
+    .bar-label {
+      width: 20%;
+      font-size: 12px;
+    }
+  }
+</style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="\dashboard" class="navbar-link">
+        <h1>Industry Insights: Trends, Technologies, and Employment Landscape</h1>
+    </a>
+    </div>
+
+<div class="chart-section">
+  <h2 class="chart-title"><u>Top 10 Technology Popularity</u></h2>
+  <p>Staying ahead in the ever-evolving tech landscape demands a keen understanding of the industry's most widely adopted technologies. This section unveils the top 10 most used technologies, equipping professionals with invaluable insights to align their skills with market demands and unlock exciting career opportunities.</p>
+  <!-- Chart 1 -->
+  <div class="bar-chart">
+    <!-- Add your bar containers here -->
+    <div class="bar-container">
+      <div class="bar-label">JavaScript</div>
+      <div class="bar" style="width: 50%;"><span>63.61%</span></div>
+    </div>
+    <div class="bar-container">
+        <div class="bar-label">HTML/CSS</div>
+        <div class="bar" style="width: 45%;"><span>52.97%</span></div>
+      </div>
+
+      <div class="bar-container">
+        <div class="bar-label">Python</div>
+        <div class="bar" style="width: 40%;"><span>49.28%</span></div>
+      </div>
+      <div class="bar-container">
+        <div class="bar-label">SQL</div>
+        <div class="bar" style="width: 35%;"><span>48.66%</span></div>
+      </div>
+      <div class="bar-container">
+        <div class="bar-label">Typescript</div>
+        <div class="bar" style="width: 30%;"><span>38.87%</span></div>
+      </div>
+      <div class="bar-container">
+        <div class="bar-label">Bash/Shell (all shells)</div>
+        <div class="bar" style="width: 25%;"><span>32.37%</span></div>
+      </div>
+      <div class="bar-container">
+        <div class="bar-label">Java</div>
+        <div class="bar" style="width: 20%;"><span>30.55%</span></div>
+      </div>
+      <div class="bar-container">
+        <div class="bar-label">C#</div>
+        <div class="bar" style="width: 15%;"><span>27.62%</span></div>
+      </div>
+      <div class="bar-container">
+        <div class="bar-label">C++</div>
+        <div class="bar" style="width: 12%;"><span>22.42%</span></div>
+      </div>
+      <div class="bar-container">
+        <div class="bar-label">C+</div>
+        <div class="bar" style="width: 10%;"><span>19.34%</span></div>
+      </div>
+      
+</div>
+
+</div>
+
+    <div class="chart-section">
+        <h2 class="chart-title"><u>Top Paying Technologies</u></h2>
+        <p>Unlock the door to financial success by delving into the technologies that command the highest salaries and compensation in the job market. This section illuminates the most lucrative skills, empowering professionals to make informed career decisions and maximize their earning potential.</p>
+        <div class="bar-chart">
+          <!-- Zig Bar (assuming this is the highest salary) -->
+          <div class="bar-container">
+            <div class="bar-label">Zig</div>
+            <div class="bar" style="width: 50%;"></div>
+            <div class="bar-salary">$103,611</div>
+          </div>
+          <!-- Erlang Bar -->
+          <div class="bar-container">
+            <div class="bar-label">Erlang</div>
+            <div class="bar" style="width: 45%;"></div> <!-- Calculated based on Zig's salary -->
+            <div class="bar-salary">$99,492</div>
+          </div>
+          <!-- F# Bar -->
+          <div class="bar-container">
+            <div class="bar-label">F#</div>
+            <div class="bar" style="width: 42.5%;"></div> <!-- Example calculation -->
+            <div class="bar-salary">$99,311</div>
+          </div>
+          <!-- ... other bars ... -->
+          <!-- Swift Bar (assuming this is the lowest salary in the range) -->
+        <div class="bar-container">
+            <div class="bar-label">Rust</div>
+            <div class="bar" style="width: 40%;"></div>
+            <div class="bar-salary">$95,811</div>
+          </div>
+          <div class="bar-container">
+            <div class="bar-label">Scala</div>
+            <div class="bar" style="width: 37%;"></div>
+            <div class="bar-salary">$92,492</div>
+          </div>
+          <div class="bar-container">
+            <div class="bar-label">Kotlin</div>
+            <div class="bar" style="width: 34%;"></div>
+            <div class="bar-salary">$90,311</div>
+          </div>
+          <div class="bar-container">
+            <div class="bar-label">Haskell</div>
+            <div class="bar" style="width: 28%;"></div>
+            <div class="bar-salary">$87,938</div>
+          </div>
+          <div class="bar-container">
+            <div class="bar-label">Swift</div>
+            <div class="bar" style="width: 26%;"></div> <!-- Example calculation -->
+            <div class="bar-salary">$86,897</div>
+          </div>
+          <div class="bar-container">
+            <div class="bar-label">Go</div>
+            <div class="bar" style="width: 20%;"></div>
+            <div class="bar-salary">$83,221</div>
+          </div>
+          <div class="bar-container">
+            <div class="bar-label">Ruby</div>
+            <div class="bar" style="width: 15%;"></div>
+            <div class="bar-salary">$78,492</div>
+          </div>
+        <!-- Additional charts can be added here if needed -->
+      </div>
+      </div>
+    
+  
+  
+    <!-- Chart 3 -->
+<!-- Chart 3 -->
+<div class="chart-section">
+    <h2 class="chart-title"><u>Use of AI in Workflow</u></h2>
+    <p>Artificial Intelligence (AI) is revolutionizing modern workflows, automating repetitive tasks, enhancing efficiency, and driving innovation. This section explores the transformative impact of AI on workflows, providing vital insights for organizations to stay competitive and for professionals to adapt to the changing landscape.</p>
+    <div class="bar-chart">
+      <div class="bar-container">
+        <div class="bar-label">Writing code</div>
+        <div class="bar" style="width: 50%;"><span>82.55%</span></div>
+      </div>
+      <div class="bar-container">
+        <div class="bar-label">Debugging and getting help</div>
+        <div class="bar" style="width: 45%;"><span>48.89%</span></div>
+      </div>
+      <div class="bar-container">
+        <div class="bar-label">Documenting code</div>
+        <div class="bar" style="width: 34.37%;"><span>34.37%</span></div>
+      </div>
+      <div class="bar-container">
+        <div class="bar-label">Learning about a codebase</div>
+        <div class="bar" style="width: 30.1%;"><span>30.1%</span></div>
+      </div>
+      <div class="bar-container">
+        <div class="bar-label">Testing code</div>
+        <div class="bar" style="width: 23.87%;"><span>23.87%</span></div>
+      </div>
+      <div class="bar-container">
+        <div class="bar-label">Project planning</div>
+        <div class="bar" style="width: 13.52%;"><span>13.52%</span></div>
+      </div>
+      <div class="bar-container">
+        <div class="bar-label">Committing and reviewing code</div>
+        <div class="bar" style="width: 10.09%;"><span>10.09%</span></div>
+      </div>
+      <div class="bar-container">
+        <div class="bar-label">Deployment and monitoring</div>
+        <div class="bar" style="width: 8%;"><span>4.74%</span></div>
+      </div>
+      <div class="bar-container">
+        <div class="bar-label">Collaborating with teammates</div>
+        <div class="bar" style="width: 6%;"><span>3.65%</span></div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  <!-- Chart 4 -->
+
+  
+  <div class="chart-section">
+    <h2 class="chart-title"><u>Employment Status</u></h2>
+    <p>The evolving job market and the rise of the gig economy have reshaped the employment landscape. This section offers a comprehensive understanding of various employment models, including full-time, part-time, freelance, and self-employment. Gain valuable insights to navigate this dynamic landscape effectively and make informed career decisions.</p>
+    <p></p>
+    <div class="bar-chart">
+      <div class="bar-container">
+        <div class="bar-label">Employed, full-time</div>
+        <div class="bar" style="width: 69.28%;"><span>69.28%</span></div>
+      </div>
+      <div class="bar-container">
+        <div class="bar-label">Independent contractor, freelancer, or self-employed</div>
+        <div class="bar" style="width: 45.91%;"><span>15.91%</span></div>
+      </div>
+      <div class="bar-container">
+        <div class="bar-label">Student, full-time</div>
+        <div class="bar" style="width: 38.39%;"><span>13.39%</span></div>
+      </div>
+      <div class="bar-container">
+        <div class="bar-label">Employed, part-time</div>
+        <div class="bar" style="width: 28%;"><span>5.72%</span></div>
+      </div>
+      <div class="bar-container">
+        <div class="bar-label">Not employed, but looking for work</div>
+        <div class="bar" style="width: 24.45%;"><span>4.75%</span></div>
+      </div>
+      <div class="bar-container">
+        <div class="bar-label">Student, part-time</div>
+        <div class="bar" style="width: 20.86%;"><span>3.86%</span></div>
+      </div>
+      <div class="bar-container">
+        <div class="bar-label">Not employed, and not looking for work</div>
+        <div class="bar" style="width: 16.57%;"><span>1.57%</span></div>
+      </div>
+      <div class="bar-container">
+        <div class="bar-label">Retired</div>
+        <div class="bar" style="width: 10%;"><span>0.84%</span></div>
+      </div>
+      <div class="bar-container">
+        <div class="bar-label">I prefer not to say</div>
+        <div class="bar" style="width: 8.99%;"><span>0.62%</span></div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

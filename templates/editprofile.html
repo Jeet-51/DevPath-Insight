@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Your Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='userprofile.css') }}">
+</head>
+<body>
+    
+    <div class="navbar">
+        <a href="\dashboard" class="navbar-link">
+            <h1>Edit Profile Information</h1>
+        </a>
+        </div>
+    <div class="main-container">
+        <form action="{{ url_for('edit_profile', profile_id=profile.id) }}" method="POST">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+            
+            <div class="education-section">
+                <h2>Education Section</h2>
+                
+                <label for="educationLevel">Education Level:</label>
+                <input type="text" id="educationLevel" name="educationLevel" value="{{ profile.education_level }}" required>
+                
+                <label for="yearsExperience">Years of Work Experience:</label>
+                <input type="number" id="yearsExperience" name="workExperienceYears" value="{{ profile.work_experience_years }}" required>
+
+                <label for="currentRole">Current Role:</label>
+                <input type="text" id="currentRole" name="currentRole" value="{{ profile.current_role }}">
+
+                <label for="desiredRole">Desired Role:</label>
+                <input type="text" id="desiredRole" name="desiredRole" value="{{ profile.desired_role }}">
+
+                <label for="industry">Industry:</label>
+                <input type="text" id="industry" name="industry" value="{{ profile.industry }}">
+
+                <label for="locationPreference">Preferred Location:</label>
+                <select id="locationPreference" name="preferredLocation">
+                    <option value="Remote" {{ 'selected' if profile.preferred_location == 'Remote' else '' }}>Remote</option>
+                    <option value="Hybrid" {{ 'selected' if profile.preferred_location == 'Hybrid' else '' }}>Hybrid</option>
+                    <option value="Offsite" {{ 'selected' if profile.preferred_location == 'Offsite' else '' }}>Offsite</option>
+                </select>
+            </div>
+
+            <div class="skills-section">
+                <h2>Skills Section</h2>
+                <!-- Render each skill as a separate input group -->
+                {% for skill in profile.skills_list %}
+                    <div class="skill">
+                        <label for="skillName">Skill:</label>
+                        <input type="text" name="skillName" value="{{ skill['skill'] }}">
+
+                        <label for="proficiencyLevel">Proficiency Level:</label>
+                        <select name="proficiencyLevel">
+                            <option value="Beginner" {{ 'selected' if skill['proficiency'] == 'Beginner' else '' }}>Beginner</option>
+                            <option value="Intermediate" {{ 'selected' if skill['proficiency'] == 'Intermediate' else '' }}>Intermediate</option>
+                            <option value="Advanced" {{ 'selected' if skill['proficiency'] == 'Advanced' else '' }}>Advanced</option>
+                            <option value="Expert" {{ 'selected' if skill['proficiency'] == 'Expert' else '' }}>Expert</option>
+                        </select>
+
+                        <label for="yearsOfExperience">Years of Experience:</label>
+                        <input type="number" name="yearsOfExperience" value="{{ skill['years'] }}">
+
+                        <label for="lastUsed">Last Used:</label>
+                        <input type="year" name="lastUsed" value="{{ skill['last_used'] }}">
+
+                        <label for="interestLevel">Interest Level:</label>
+                        <select name="interestLevel">
+                            <option value="Low" {{ 'selected' if skill['interest'] == 'Low' else '' }}>Low</option>
+                            <option value="Medium" {{ 'selected' if skill['interest'] == 'Medium' else '' }}>Medium</option>
+                            <option value="High" {{ 'selected' if skill['interest'] == 'High' else '' }}>High</option>
+                        </select>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <input type="submit" value="Update Information">
+        </form>
+    </div>
+</body>
+</html>

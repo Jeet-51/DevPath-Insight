@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - DevPath Insight</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboardstyle.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <a href="/dashboard">DevPath Insight</a>
+        </div>
+        <div class="navbar-links">
+            <a href="/dashboard">Home</a>
+            <a href="/User-Profile">Add Your Information</a>
+            <a href="/Explore-Trends">Discover Trends</a>
+            <a href="/View-data">View Data</a>
+        </div>
+        <div class="navbar-user">
+            <div class="dropdown">
+                <img src="https://cdn.dribbble.com/users/2592071/screenshots/7327591/media/ddcddda1151bdabce519bfc559a8e250.png?resize=1000x750&vertical=center" alt="User Logo" style="height: 50px;" onclick="toggleDropdown()">
+                <div class="dropdown-content" id="dropdownContent">
+                    <a href="/logout">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    
+
+    <div>
+        <div class="heading-container">
+            <h1>Welcome to DevPath Insight Dashboard</h1>
+          </div>
+
+          <div><h2>A Stack Overflow Data-Driven Career Tool</h2>
+        </div>
+    <div class="main-content">
+        <br>
+        <div class="content-flex">
+            <div class="overview-section">
+                <h2><u>Overview</u></h2><br>
+                
+                        <p>Navigating a career in development can be daunting. With the Developer Career Insight Tool, developers gain access to up-to-date, specialized information tailored to the tech industry. The tool offers an interactive platform where users can reflect their education, job history, and skills to glean tailored insights. This is a database-driven beacon for developers at all stages—from students cutting their teeth in coding to experienced professionals eyeing the next leap forward.</p>
+                        <p>What sets the Developer Career Insight Tool apart is its specialized database, informed directly by industry-specific insights from the Stack Overflow community. It provides more than just career advice; it delivers a targeted analysis of skill discrepancies and concrete steps for professional advancement. It's an indispensable asset not only for developers but also for recruiters and hiring managers to evaluate candidate qualifications and understand market-standard compensations.</p>
+                        <p><b>Primary Demographic:</b>
+                            The tool serves a wide spectrum of the developer community, welcoming individuals from entry-level coders to tech veterans. It's equally beneficial for educational institutions molding the next wave of developers and corporate entities striving to align their teams with the industry's best practices.</p>
+            <p>The Developer Career Insight Tool doesn't just compile data; it interprets it to map out the landscape of the tech industry. It's an ally in professional growth, equipping users with the insights needed to navigate their career trajectory with confidence.</p>
+                        </div>
+
+            
+            <div class="side-sections">
+                <div class="section">
+                    <h3><u>Add Your Information</u></h3>
+                    <p>List your information related to Education, Industry Experience, and Coding Skills on our platform and have potential insights into your skills. Showcase your skills to a broad developers.</p>
+                    <a href="{{ url_for('add_listing') }}" class="button">Add Your Information</a>
+                </div>
+            
+                <div class="section">
+                    <h3><u>Industries Insights</u></h3>
+                    <p>Gain insights into the current industry and technology trends. Stay informed about coding skills, technology preferred, and job market.</p>
+                    <a href="{{ url_for('discover_trends') }}" class="button">Explore Trends</a>
+                </div>
+            
+                <div class="section">
+                    <h3><u>Users Data</u></h3>
+                    <p>Developers can discover better information on our platform. Browse through a variety of technology trends, compare different skills used in that field, and find the perfect skill that matches your profile.</p>
+                    <a href="{{ url_for('find_deals') }}" class="button">View Users Information</a>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    font-family: 'Inter', sans-serif; 
+    background-color: #F3F4F6;
+    font-size: 16px;
+    color: #333;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 25px;
+    background: linear-gradient(to right, #3498db, #2980b9);
+    color: white;
+    text-align: center;
+}
+
+.navbar h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    flex: 1; /* This will make sure the title takes up the full width of the navbar */
+}
+
+.navbar-link {
+    text-decoration: none; /* Removes the underline from the link */
+    color: inherit; /* Inherits the color from the navbar class, which is white */
+    display: block; /* Makes the link take the full available space */
+}
+
+.navbar-link:hover,
+.navbar-link:focus {
+    text-decoration: none; /* Keeps the link without underline on hover/focus */
+}
+
+.chart-container {
+    width: 600px;
+    height: 400px;
+    margin: auto;
+}
+
+/* Add styles for your navbar and other elements as needed */
